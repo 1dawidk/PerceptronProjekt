@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Neuron.h"
 
 void Neuron::testInput() {
@@ -8,6 +9,10 @@ void Neuron::testInput() {
     }
 
     activation(sum);
+}
+
+Neuron::~Neuron() {
+    cout << "Empty neuron destructor" << endl;
 }
 
 double Neuron::getOutput() {

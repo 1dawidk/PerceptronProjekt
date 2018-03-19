@@ -9,6 +9,8 @@ class Neuron {
 public:
     void testInput();
     virtual double getOutput();
+    virtual Neuron* getInstance()=0;
+    ~Neuron();
 
     void attach(Neuron* neuron, double w);
     void setInputWeight(int i, double w);

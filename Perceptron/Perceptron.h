@@ -3,26 +3,33 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 #include "Neuron.h"
-#include "PerceptronSettings.h
+#include "NetLayer.h"
 
 using namespace std;
 
 class Perceptron {
 public:
-    void create();
-    void learn();
-    void test();
-    void setParam(ParamKey key, const string &value);
-
     enum ParamKey{
         T_DIR,
         L_DIR,
-        LAYERS_NO
+        STRUCT
     };
+
+    void create();
+    void cleanup();
+
+
+    void learn();
+    void test();
+    void setParam(ParamKey key, const string &value);
+    void setNeuronTemplate(Neuron *t);
 private:
-    vector<Neuron*> *net;
-    string settings[2];
+    vector<NetLayer*> net;
+    string settings[3];
+    Neuron* t;
+
 };
 
 

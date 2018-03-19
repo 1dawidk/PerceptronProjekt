@@ -4,6 +4,10 @@
 #include "../Neuron.h"
 
 class McCullochPitts_Neuron : public Neuron {
+public:
+    Neuron *getInstance() override;
+
+private:
     void activation(double in) override;
 };
 
